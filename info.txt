@@ -1,0 +1,28 @@
+Nome da DB = Clube
+
+tb: Sócios
+
+user: josemar
+password: PEWEd44a3ADA /p5VICaC7Q3vO
+
+==============================================
+
+// $resultado = DB::select("SELECT count(*) AS total FROM socios");
+        // inserção de socios
+        // DB::insert("INSERT INTO socios VALUES (0, ?, ?, now(), now())", ["Daniel Avelino", '444']);
+        // DB::update("UPDATE socios SET nome = ? WHERE id_socio = ?", ["Daniel Alterado", 4]);
+
+        DB::delete("DELETE FROM socios WHERE id_socio = ?", [2]);
+        
+        // Leitura dos sócios da base de dados
+        $resultado = DB::select("SELECT * FROM socios");
+
+        // echo "<pre>";
+
+        // print_r($resultado);
+
+        $model = new Socios();
+
+        $model->deleteAll();
+
+        $resultado = $model->getSocios();
